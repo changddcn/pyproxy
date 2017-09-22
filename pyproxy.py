@@ -73,9 +73,9 @@ def deal_request(conn,addr):
                     break
             #关闭连接并保存信息
             
-            proxy_sock_to_server.shutdown()
+            proxy_sock_to_server.shutdown(2)
             proxy_sock_to_server.close()
-            conn.shutdown()
+            conn.shutdown(2)
             conn.close()
             log(url, postdata, alldata_from_server)
 
